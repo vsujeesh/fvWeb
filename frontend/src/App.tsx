@@ -1,8 +1,12 @@
-import type { Component } from 'solid-js';
+import type { Component } from "solid-js";
+import { Route } from "@solidjs/router";
+import Home from "./pages/Home";
 
 const App: Component = () => {
   return (
-      <p class="text-2xl text-purple-600">fvWeb</p>
+    <>
+      <Route path="/" component={Home} />
+    </>
   );
 };
 
