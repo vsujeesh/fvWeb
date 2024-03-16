@@ -1,6 +1,10 @@
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
+
+from .database import Session, get_db
+
 app = FastAPI()
 
-@app.get('/')
-async def root():
-    return {'message': 'Hello World'}
+
+@app.get("/")
+async def root(db: Session = Depends(get_db)):
+    return {"message": "Hello World"}
